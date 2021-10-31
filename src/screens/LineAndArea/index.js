@@ -1,22 +1,22 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, TouchableOpacity, Text, FlatList} from 'react-native';
-import BarCharts from '../../components/Charts/Bar/BarCharts';
-import HorizontalBars from '../../components/Charts/Bar/HorizontalBarCharts';
-import StackedBars from '../../components/Charts/Bar/StackedBarCharts';
-import CappedBarCharts from '../../components/Charts/Bar/CappedBarCharts';
-import GroupedBars from '../../components/Charts/Bar/GroupedBars';
-import AnimatedBars from '../../components/Charts/Bar/AnimatedBars';
+import LineCharts from '../../components/Charts/Line/LineCharts';
+import StyledLineCharts from '../../components/Charts/Line/StyledLineCharts';
+import LabelledLineCharts from '../../components/Charts/Line/LabelledLineCharts';
+import CurvedLineCharts from '../../components/Charts/Line/CurvedLineCharts';
+import AnimatedLineCharts from '../../components/Charts/Line/AnimatedLineCharts';
+import MultipleLineCharts from '../../components/Charts/Line/MultipleLineCharts';
 
-const BarAndStack = props => {
+const LineAndArea = props => {
   const {setHeaderTitle, setBackPress, currentIndex, setCurrentIndex} = props;
 
   const data = [
-    {name: 'Bar Charts'},
-    {name: 'Stacked Bar Charts'},
-    {name: 'Horizontal Bar Charts'},
-    {name: 'Animated Bar Charts'},
-    {name: 'Capped Bar Charts'},
-    {name: 'Grouped Bar Charts'},
+    {name: 'Minimal Line Charts'},
+    {name: 'Styled Line Charts'},
+    {name: 'Curved Line Charts'},
+    {name: 'Labelled Line Charts'},
+    {name: 'Animated Line Charts'},
+    {name: 'Multiple Line Charts'},
   ];
 
   console.log('called');
@@ -38,17 +38,17 @@ const BarAndStack = props => {
   const renderChart = () => {
     switch (currentIndex) {
       case 0:
-        return <BarCharts />;
+        return <LineCharts />;
       case 1:
-        return <StackedBars />;
+        return <StyledLineCharts />;
       case 2:
-        return <HorizontalBars />;
+        return <CurvedLineCharts />;
       case 3:
-        return <AnimatedBars />;
+        return <LabelledLineCharts />;
       case 4:
-        return <CappedBarCharts />;
+        return <AnimatedLineCharts />;
       case 5:
-        return <GroupedBars />;
+        return <MultipleLineCharts />;
     }
   };
 
@@ -79,4 +79,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BarAndStack;
+export default LineAndArea;

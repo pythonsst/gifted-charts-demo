@@ -11,6 +11,7 @@ import {
 import Header from './src/components/Header';
 import Footer from './src/components/Footer';
 import BarAndStack from './src/screens/BarAndStack';
+import LineAndArea from './src/screens/LineAndArea';
 
 // const {height} = Dimensions.get('window');
 
@@ -32,7 +33,7 @@ const App = () => {
           />
         );
       case 1:
-        return <BarAndStack setHeaderTitle={setHeaderTitle} />;
+        return <LineAndArea setHeaderTitle={setHeaderTitle} />;
       case 0:
         return <BarAndStack setHeaderTitle={setHeaderTitle} />;
     }
